@@ -1,0 +1,35 @@
+
+body {
+    background-color: rgb(47, 40, 51);
+    margin: 0;
+    padding-top: 65px; /* Adjust padding-top to match increased navbar height */
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stack image and text vertically */
+    height: 100vh; /* Full viewport height */
+}
+
+.image-container img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.welcome-text {
+    text-align: center;
+    margin-top: 20px;
+    color: aliceblue;
+    font-size: 2em; /* Increase font size */
+}
+
+.welcome-text p {
+    margin: 10px 0; /* Decrease space between welcome lines */
+}
+
+
+

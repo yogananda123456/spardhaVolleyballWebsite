@@ -1,0 +1,141 @@
+
+body {
+    background-color: rgb(47, 40, 51);
+    margin: 0;
+    padding-top: 85px; /* Adjust padding-top to match increased navbar height */
+}
+
+.buttons-container {
+    gap: 2%;
+    display: flex;
+    justify-content: center; /* Equal spacing between buttons */
+    position: fixed; /* Make the container fixed */
+    top: 85px; /* Position it below the navbar */
+    width: 100%; /* Full width */
+    background-color: rgb(47, 40, 51); /* Match body background color */
+    padding: 10px 0; /* Add some padding */
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+.buttons-container button {
+    background-color:rgb(178, 196, 129);
+    color: black;
+    border: none;
+    padding: 15px 30px; /* Increase padding to make buttons larger */
+    font-size: 1.5em; /* Increase font size */
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.buttons-container button:hover {
+    background-color: #f0f0f0; /* Slightly darker background on hover */
+}
+
+main {
+    padding-top: 50px; /* Adjust padding-top to account for fixed buttons container */
+    color: white; /* Change font color to white */
+    height: 75vh; /* Increase height of the main div */
+    border: 5px solid; /* Increase border thickness */
+    /* border-color: red; Give background color to the main div */
+    width: 90%; /* Use only 90% of the width */
+    margin: 0 auto; /* Center the main div */
+    margin-top: 150px; /* Adjust margin-top to account for buttons container height */
+    border-width: 0cap;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    grid-template-rows: repeat(6, 1fr); /* 6 rows */
+    gap: 10px; /* Gap between grid items */
+}
+
+.grid-item {
+    background-color:#4b50b6f6; /* Optional: Add background color */
+    border: 1px solid black; /* Optional: Add border */
+    text-align: center; /* Center text */
+    padding: 20px; /* Add some padding */
+}
+
+.grid-item.empty {
+    background-color: transparent; /* Make the background transparent */
+    border: none; /* Remove the border */
+}
+
+.grid-item.combined {
+    grid-column: span 2; /* Span across 2 columns */
+    background-color:#470378f6; /* Optional: Add background color */
+    border: 1px solid black; /* Optional: Add border */
+    text-align: center; /* Center text */
+    padding: 20px; /* Add some padding */
+}
+
+#reset {
+    background-color: white; /* Button background color */
+    color: black; /* Button text color */
+    border: 1px solid black; /* Button border */
+    padding: 10px 20px; /* Button padding */
+    font-size: 1em; /* Button font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
+#reset:hover {
+    background-color: #f0f0f0; /* Slightly darker background on hover */
+}
+
+#end-match {
+    background-color: white; /* Button background color */
+    color: black; /* Button text color */
+    border: 1px solid black; /* Button border */
+    padding: 10px 20px; /* Button padding */
+    font-size: 1em; /* Button font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
+#end-match:hover {
+    background-color: #f0f0f0; /* Slightly darker background on hover */
+}
+
+.plus-button {
+    background-color: white; /* Button background color */
+    color: black; /* Button text color */
+    border: 1px solid black; /* Button border */
+    padding: 10px 20px; /* Button padding */
+    font-size: 1em; /* Button font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.plus-button:hover {
+    background-color: #f0f0f0; /* Slightly darker background on hover */
+}
+
+.minus-button {
+    background-color: white; /* Button background color */
+    color: black; /* Button text color */
+    border: 1px solid black; /* Button border */
+    padding: 10px 20px; /* Button padding */
+    font-size: 1em; /* Button font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.minus-button:hover {
+    background-color: #f0f0f0; /* Slightly darker background on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

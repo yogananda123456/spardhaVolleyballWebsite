@@ -36,39 +36,11 @@ nav p {
     margin-left: 20px; /* Move to the left */
 }
 
-body {
-    background-color: rgb(47, 40, 51);
-    margin: 0;
-    padding-top: 65px; /* Adjust padding-top to match increased navbar height */
+nav a {
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit color from parent */
 }
 
-.image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; /* Stack image and text vertically */
-    height: 100vh; /* Full viewport height */
+.active-link div {
+    background-color: #7b4b64; /* Change background color for active link */
 }
-
-.image-container img {
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-}
-
-.welcome-text {
-    text-align: center;
-    margin-top: 20px;
-    color: aliceblue;
-    font-size: 2em; /* Increase font size */
-}
-
-.welcome-text p {
-    margin: 10px 0; /* Decrease space between welcome lines */
-}
-
-
-
-
-
