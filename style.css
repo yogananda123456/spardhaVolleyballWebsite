@@ -1,0 +1,74 @@
+nav {
+    display: flex;
+    justify-content: space-evenly; /* Decrease space between items */
+    align-items: center; /* Align items in the middle */
+    background-color: #655f69f6;
+    padding: 15px; /* Increase padding to increase height */
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+nav div {
+    height: 50px; /* Increase height to match increased navbar height */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    background-color: #470378f6;
+    border-radius: 15%;
+    width: 100px; /* Increase width of menu buttons */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav div:hover {
+    background-color: #b176c5;
+}
+
+nav p {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    margin: 0; /* Remove default margin */
+    padding: 0 10px; /* Adjust padding */
+    font-size: 1.5em; /* Increase font size */
+    margin-left: 20px; /* Move to the left */
+}
+
+body {
+    background-color: rgb(47, 40, 51);
+    margin: 0;
+    padding-top: 65px; /* Adjust padding-top to match increased navbar height */
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stack image and text vertically */
+    height: 100vh; /* Full viewport height */
+}
+
+.image-container img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.welcome-text {
+    text-align: center;
+    margin-top: 20px;
+    color: aliceblue;
+    font-size: 2em; /* Increase font size */
+}
+
+.welcome-text p {
+    margin: 10px 0; /* Decrease space between welcome lines */
+}
+
+
+
+
+
