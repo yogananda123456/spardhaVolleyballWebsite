@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-// import App from './App';
 import Scoring from './components/scoring'; // Correct import path and capitalization
 import Home from './components/Home'; // Correct import path and capitalization
+import Upcoming from './components/Upcoming';
+import Results from './components/Results';
 import {
     createBrowserRouter,
     RouterProvider, // Change RouteProvider to RouterProvider
-    Route,
 } from "react-router-dom"
 const router = createBrowserRouter([
 
@@ -17,7 +17,15 @@ const router = createBrowserRouter([
     },
     {
         path: "spardha",
-        element: <Scoring />, // Correct capitalization
+        element: <Scoring />, // Correct c apitalization
+    },
+    {
+        path: "upcoming",
+        element: <Upcoming />,
+    },
+    {
+        path: "results",
+        element: <Results />,
     }
 
 ]);

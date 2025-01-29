@@ -7,9 +7,9 @@ function NavBar() {
     <div>
       <header>
         <nav>
-          <NavLink exact to="/" activeClassName="active-link"><p> DRAVOS </p></NavLink>
+          <NavLink exact="true" to="/" activeclassname="active-link"><p> DRAVOS </p></NavLink>
           <div id="people"> People</div>
-          <NavLink to="/spardha" activeClassName="active-link">
+          <NavLink to="/spardha" activeclassname="active-link">
             <div id="spardha">spardha</div>
           </NavLink>
           <div id="gallery">Gallery</div>
