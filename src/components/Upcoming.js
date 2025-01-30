@@ -18,7 +18,7 @@ const Upcoming = () => {
                 <NavBar />
             </header>
             <div className="buttons-container">
-                <button id="Upcoming">Upcoming</button>
+                <button id="Upcoming" >Upcoming</button>
                 <button id="Live-now">Live Now</button>
                 <button id="Results">Results</button>
             </div>

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './scoring.css';
 import NavBar from './NavBar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLocationDot, faCalendarDays, faClock } from '@fortawesome/free-solid-svg-icons';
 
 const Scoring = () => {
     const [matches, setMatches] = useState([]);
@@ -38,36 +40,6 @@ const Scoring = () => {
             .catch(error => console.error('Error fetching results:', error));
     }, []);
 
-    const handleIncrement = (index, key) => {
-        const updatedMatches = matches.map((match, i) => {
-            if (i === index) {
-                return { ...match, [key]: match[key] + 1 };
-            }
-            return match;
-        });
-        setMatches(updatedMatches);
-    };
-
-    const handleDecrement = (index, key) => {
-        const updatedMatches = matches.map((match, i) => {
-            if (i === index) {
-                return { ...match, [key]: match[key] - 1 };
-            }
-            return match;
-        });
-        setMatches(updatedMatches);
-    };
-
-    const resetScores = (index) => {
-        const updatedMatches = matches.map((match, i) => {
-            if (i === index) {
-                return { ...match, teamAscore: 0, teamBscore: 0, teamAset: 0, teamBset: 0 };
-            }
-            return match;
-        });
-        setMatches(updatedMatches);
-    };
-
     return (
         <div>
             <header>
@@ -78,6 +50,7 @@ const Scoring = () => {
                     id="Upcoming"
                     className={view === 'upcoming' ? 'button-active' : ''}
                     onClick={() => setView('upcoming')}
+                    style={{ backgroundColor: view === 'upcoming' ? 'white' : '' }}
                 >
                     Upcoming
                 </button>
@@ -85,6 +58,7 @@ const Scoring = () => {
                     id="Live-now"
                     className={view === 'live' ? 'button-active' : ''}
                     onClick={() => setView('live')}
+                    style={{ backgroundColor: view === 'live' ? 'white' : '' }}
                 >
                     Live Now
                 </button>
@@ -92,6 +66,7 @@ const Scoring = () => {
                     id="Results"
                     className={view === 'results' ? 'button-active' : ''}
                     onClick={() => setView('results')}
+                    style={{ backgroundColor: view === 'results' ? 'white' : '' }}
                 >
                     Results
                 </button>
@@ -99,10 +74,7 @@ const Scoring = () => {
             <main>
                 {view === 'live' && matches.map((match, index) => (
                     <div key={index} className="main-panel">
-                        <div className="start-scoring">
-                            start scoring
-                        </div>
-                        <h2 className="panel-heading"><span id="match-type1">League Match</span> </h2>
+                        <h2 className="panel-heading"><span id="match-type1">{matches[index].matchType}</span> </h2>
                         <div className="team-container">
                             <div className="team-panel" id="team-a">{match.teamA}</div>
                             <div className="versus">Vs</div>
@@ -119,29 +91,37 @@ const Scoring = () => {
                 ))}
                 {view === 'upcoming' && upcomingMatches.map((match, index) => (
                     <div key={index} className="main-panel">
-                        
-                        <h2 className="panel-heading"><span id="match-type">League Match</span> </h2>
+                        <h2 className="panel-heading"><span id="match-type1">{match.matchType}</span> </h2>
                         <div className="team-container">
                             <div className="team-panel" id="team-a">{match.teamA}</div>
                             <div className="versus">Vs</div>
                             <div className="team-panel" id="team-b">{match.teamB}</div>
                         </div>
+                        <div className="match-details">
+                            <div className="detail-block">
+                                <FontAwesomeIcon icon={faCalendarDays} /> {match.date}
+                            </div>
+                            <div className="detail-block">
+                                <FontAwesomeIcon icon={faClock} /> {match.time}
+                            </div>
+                            <div className="detail-block">
+                                <FontAwesomeIcon icon={faLocationDot} /> {match.court}
+                            </div>
+                        </div>
                     </div>
                 ))}
-                {view === 'results' && results.map((result, index) => (
+                {view === 'results' && results.map((match, index) => (
                     <div key={index} className="main-panel">
-                       <h2 className="panel-heading"><span id="match-type">League Match</span> </h2>
+                        <h2 className="panel-heading"><span id="match-type1">{match.matchType}</span> </h2>
                         <div className="team-container">
-                            <div className="team-panel" id="team-a">{result.teamA}</div>
+                            <div className="team-panel" id="team-a">{match.teamA}</div>
                             <div className="versus">Vs</div>
-                            <div className="team-panel" id="team-b">{result.teamB}</div>
+                            <div className="team-panel" id="team-b">{match.teamB}</div>
                         </div>
                         <div className="scores-container">
-                            <div className="set-score" id="set-score-a">{result.teamAset}</div>
-                            <div className="score" id="score-a">{result.teamAscore}</div>
+                            <div className="score" id="score-a">{match.teamAs}</div>
                             <div className="score-separator">:</div>
-                            <div className="score" id="score-b">{result.teamBscore}</div>
-                            <div className="set-score" id="set-score-b">{result.teamBset}</div>
+                            <div className="score" id="score-b">{match.teamBs}</div>
                         </div>
                     </div>
                 ))}
