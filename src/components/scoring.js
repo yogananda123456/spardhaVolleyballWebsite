@@ -102,7 +102,7 @@ const Scoring = () => {
                         <div className="start-scoring">
                             start scoring
                         </div>
-                        <h2 className="panel-heading"><span id="match-type">League</span> Match</h2>
+                        <h2 className="panel-heading"><span id="match-type1">League Match</span> </h2>
                         <div className="team-container">
                             <div className="team-panel" id="team-a">{match.teamA}</div>
                             <div className="versus">Vs</div>
@@ -120,7 +120,7 @@ const Scoring = () => {
                 {view === 'upcoming' && upcomingMatches.map((match, index) => (
                     <div key={index} className="main-panel">
                         
-                        <h2 className="panel-heading"><span id="match-type">League</span> Match</h2>
+                        <h2 className="panel-heading"><span id="match-type">League Match</span> </h2>
                         <div className="team-container">
                             <div className="team-panel" id="team-a">{match.teamA}</div>
                             <div className="versus">Vs</div>
@@ -130,8 +130,7 @@ const Scoring = () => {
                 ))}
                 {view === 'results' && results.map((result, index) => (
                     <div key={index} className="main-panel">
-                        
-                        <h2 className="panel-heading"><span id="match-type">League</span> Match</h2>
+                       <h2 className="panel-heading"><span id="match-type">League Match</span> </h2>
                         <div className="team-container">
                             <div className="team-panel" id="team-a">{result.teamA}</div>
                             <div className="versus">Vs</div>

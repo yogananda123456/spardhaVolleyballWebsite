@@ -8,12 +8,12 @@ body {
     gap: 2%;
     display: flex;
     justify-content: center; /* Equal spacing between buttons */
-    position: fixed; /* Make the container fixed */
+    position: relative; /* Change to relative */
     top: 85px; /* Position it below the navbar */
     width: 100%; /* Full width */
     background-color: rgb(47, 40, 51); /* Match body background color */
     padding: 10px 0; /* Add some padding */
-    z-index: 1000; /* Ensure it stays on top */
+    z-index: 0; /* Ensure it stays behind the navbar */
 }
 
 .button-active {
@@ -128,4 +128,114 @@ main {
 
 .minus-button:hover {
     background-color: #f0f0f0; /* Slightly darker background on hover */
+}
+.main-panel {
+    border: 2px solid #000000;
+    border-radius: 15px;
+    padding: 10px 20px 20px 20px; /* Reduce top padding */
+    margin: 20px auto;
+    width: 80%;
+    text-align: center;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: #ffffff; /* Add white background color */
+}
+
+.panel-heading {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap; /* Ensure items do not wrap */
+}
+
+.team-panel {
+    display: inline-block;
+    width: 40%;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    vertical-align: middle;
+}
+
+.versus {
+    display: inline-block;
+    width: 5%;
+    padding: 10px;
+    margin: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.scores-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.set-score {
+    display: inline-block;
+    width: 40px;
+    padding: 10px;
+    margin: 0 10px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.score {
+    display: inline-block;
+    width: 60px; /* Make the score box bigger than the set score box */
+    padding: 10px;
+    margin: 0 20px; /* Add gap between the scores */
+    border: 2px solid #000;
+    border-radius: 10px;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.score-separator {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.start-scoring {
+    padding: 10px;
+    color:#000000;
+    background-color: #f70808f6;
+    text-align: center;
+    border-radius: 10px;
+    margin: 10px auto 5px auto; /* Decrease bottom margin */
+    width: fit-content;
+    float: right; /* Move to the right */
+}
+
+#match-type,
+#team-a,
+#versus,
+#set-score-a,
+#score-a,
+#score-separator,
+#score-b,
+#set-score-b,
+#team-b {
+    color: black;
+}
+
+#match-type1 {
+    margin-left: 10%;
+}
+.panel-heading {
+    color:#000000;
+}
+.versus {
+    color:#000000;
 }
