@@ -7,10 +7,12 @@ function NavBar() {
     <div>
       <header>
         <nav>
-          <NavLink exact="true" to="/" activeclassname="active-link"><p> DRAVOS </p></NavLink>
-          <div id="people"> People</div>
-          <NavLink to="/spardha" activeclassname="active-link">
-            <div id="spardha">spardha</div>
+          <NavLink exact="true" to="/" activeclassname="active-link">
+          <img src={`${process.env.PUBLIC_URL}/dravos.jpg`} alt="Dravos" className="nav-logo" />
+          </NavLink>
+          <div id="people">People</div>
+          <NavLink to="/spardha/live" activeclassname="active-link">
+            <div id="spardha">Spardha</div>
           </NavLink>
           <div id="gallery">Gallery</div>
         </nav>

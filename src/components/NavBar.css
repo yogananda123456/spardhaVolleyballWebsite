@@ -3,24 +3,26 @@ nav {
     justify-content: space-evenly; /* Decrease space between items */
     align-items: center; /* Align items in the middle */
     background-color: #655f69f6;
-    padding: 15px; /* Increase padding to increase height */
+    padding: 20px; /* Increase padding to increase height */
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 5; 
+    font-family: 'Roboto', 'Open Sans', sans-serif;
 }
 
 nav div {
-    height: 50px; /* Increase height to match increased navbar height */
+    height: 60px; /* Increase height */
     color: white;
     text-align: center;
     text-decoration: none;
-    background-color: #470378f6;
-    border-radius: 15%;
-    width: 100px; /* Increase width of menu buttons */
+    background: linear-gradient(45deg, rgb(122, 44, 195), #470378f6); /* Linear gradient from white to purple */
+    border-radius: 10px; /* Beveled edges */
+    width: 120px; /* Increase width */
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color 0.3s;
 }
 
 nav div:hover {
@@ -33,7 +35,7 @@ nav p {
     text-decoration: none;
     margin: 0; /* Remove default margin */
     padding: 0 10px; /* Adjust padding */
-    font-size: 1.5em; /* Increase font size */
+    font-size: 3em; /* Increase font size */
     margin-left: 20px; /* Move to the left */
 }
 
@@ -43,5 +45,12 @@ nav a {
 }
 
 .active-link div {
-    background-color: #7b4b64; /* Change background color for active link */
+    background: linear-gradient(45deg, white, #470378f6); /* Linear gradient from white to purple */
+}
+
+.nav-logo {
+    width: 70px; /* Increase width */
+    height: 70px; /* Increase height */
+    border-radius: 50%;
+    cursor: pointer;
 }
