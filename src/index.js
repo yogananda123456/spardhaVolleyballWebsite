@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
- 
+ import People from './components/people'; // Correct import path and capitalization
+ import Gallery from './components/Gallery'; // Correct import path and capitalization
 import Home from './components/Home'; // Correct import path and capitalization
 import Upcoming from './components/Upcoming';
 import Results from './components/Results';
@@ -27,6 +28,14 @@ const router = createBrowserRouter([
     {
         path: "spardha/results",
         element: <Results />,
+    },
+    {
+        path: "people",
+        element: <People />,
+    },
+    {
+        path: "Gallery",
+        element: <Gallery />,
     }
 
 ]);

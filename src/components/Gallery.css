@@ -1,0 +1,11 @@
+
+.gallery {
+    width: 90%;
+    padding: 40px 20px 20px 20px; /* Increase padding on top */
+    text-align: center;
+    color: #fffefe; /* Change font color */
+    display: flex; /* Center text vertically */
+    flex-direction: column; /* Align items in a column */
+    justify-content: center; /* Center text vertically */
+    align-items: center; /* Center text horizontally */
+}
