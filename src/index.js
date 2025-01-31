@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
- 
+import Gallery from './components/Gallery'; // Correct import path and capitalization
 import Home from './components/Home'; // Correct import path and capitalization
 import Upcoming from './components/Upcoming';
 import Results from './components/Results';
+import People from './components/people'; // Correct import path and capitalization
 import {
     createBrowserRouter,
     RouterProvider, // Change RouteProvider to RouterProvider
@@ -27,8 +28,15 @@ const router = createBrowserRouter([
     {
         path: "spardha/results",
         element: <Results />,
+    },
+    {
+        path: "people",
+        element: <People />,
+    },
+    {
+        path: "Gallery",
+        element: <Gallery />,
     }
-
 ]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -185,7 +185,7 @@ main {
     flex-wrap: nowrap; /* Ensure items do not wrap */
 }
 
-.team-panel ,.team-panel-1{
+.team-panel{
     display: inline-block;
     width: 20%; /* Decrease width from 40% to 30% */
     padding: 10px;

@@ -1,0 +1,28 @@
+.people-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%; /* Ensure the container takes the full width */
+  }
+  
+  .main-panel {
+    width: 80%;
+    background-color: rgba(128, 128, 128, 0.5); /* Grey translucent background */
+    border-radius: 10px; /* Beveled edges */
+    margin: 20px 0;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .panel-header {
+    background-color: white; /* Solid white background */
+    color: black; /* Black text */
+    border-radius: 10px; /* Beveled edges */
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .panel-content {
+    color: black;
+  }

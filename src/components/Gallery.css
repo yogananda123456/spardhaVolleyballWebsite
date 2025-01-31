@@ -1,0 +1,13 @@
+.gallery-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+  }
+    
+    .gallery {
+        width: 30%;
+        padding: 20px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        text-align: center;
+    }
