@@ -13,9 +13,6 @@ function NavBar() {
           <NavLink to="/people" activeclassname="active-link">
             <div id="people">People</div>
           </NavLink>
-          <NavLink to="/people" activeclassname="active-link">
-            <div id="people">People</div>
-          </NavLink>
           <NavLink to="/spardha/live" activeclassname="active-link">
             <div id="spardha">Spardha</div>
           </NavLink>
