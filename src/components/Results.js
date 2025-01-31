@@ -70,7 +70,7 @@ const Results = () => {
                             <div className="Gender">{match.gender}</div>
                             <div className="team-container">
                                 <div
-                                    className="team-panel-1"
+                                    className="team-panel"
                                     id="team-a"
                                     style={{ backgroundColor: backgroundColors.teamA }}
                                 >
@@ -78,7 +78,7 @@ const Results = () => {
                                 </div>
                                 <div className="versus">Vs</div>
                                 <div
-                                    className="team-panel-1"
+                                    className="team-panel"
                                     id="team-b"
                                     style={{ backgroundColor: backgroundColors.teamB }}
                                 >

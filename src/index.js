@@ -6,6 +6,7 @@ import './index.css';
 import Home from './components/Home'; // Correct import path and capitalization
 import Upcoming from './components/Upcoming';
 import Results from './components/Results';
+import People from './components/people'; // Correct import path and capitalization
 import {
     createBrowserRouter,
     RouterProvider, // Change RouteProvider to RouterProvider

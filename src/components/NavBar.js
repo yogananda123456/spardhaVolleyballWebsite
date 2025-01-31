@@ -8,7 +8,10 @@ function NavBar() {
       <header>
         <nav>
           <NavLink exact="true" to="/" activeclassname="active-link">
-          <img src={`${process.env.PUBLIC_URL}/dravos.jpg`} alt="Dravos" className="nav-logo" />
+            <img src={`${process.env.PUBLIC_URL}/dravos.jpg`} alt="Dravos" className="nav-logo" />
+          </NavLink>
+          <NavLink to="/people" activeclassname="active-link">
+            <div id="people">People</div>
           </NavLink>
           <NavLink to="/people" activeclassname="active-link">
             <div id="people">People</div>
@@ -17,7 +20,9 @@ function NavBar() {
             <div id="spardha">Spardha</div>
           </NavLink>
           <NavLink to="/Gallery" activeclassname="active-link">
+          <NavLink to="/Gallery" activeclassname="active-link">
           <div id="gallery">Gallery</div>
+          </NavLink>
           </NavLink>
         </nav>
       </header>
