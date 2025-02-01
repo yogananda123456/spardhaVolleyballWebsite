@@ -123,11 +123,13 @@ const Live = () => {
                                 <div className="team-container">
                                     <div className="team-panel" id="team-a">
                                         {matches[0].teamA}
-                                        {servingTeam1 === 'teamA' && <FontAwesomeIcon icon={faVolleyball} style={{ marginLeft: '10px' }} />}
+                                        {matches[0].court === 'Court 1' && servingTeam1 === 'teamA' && <FontAwesomeIcon icon={faVolleyball} style={{ marginLeft: '10px' }} />}
+                                        {matches[0].court === 'Court 2' && servingTeam2 === 'teamA' && <FontAwesomeIcon icon={faVolleyball} style={{ marginLeft: '10px' }} />}
                                     </div>
                                     <div className="versus">Vs</div>
                                     <div className="team-panel" id="team-b">
-                                        {servingTeam1 === 'teamB' && <FontAwesomeIcon icon={faVolleyball} style={{ marginRight: '10px' }} />}
+                                        {matches[0].court === 'Court 1' && servingTeam1 === 'teamB' && <FontAwesomeIcon icon={faVolleyball} style={{ marginRight: '10px' }} />}
+                                        {matches[0].court === 'Court 2' && servingTeam2 === 'teamB' && <FontAwesomeIcon icon={faVolleyball} style={{ marginRight: '10px' }} />}
                                         {matches[0].teamB}
                                     </div>
                                 </div>
