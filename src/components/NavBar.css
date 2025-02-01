@@ -54,3 +54,106 @@ nav a {
     border-radius: 50%;
     cursor: pointer;
 }
+
+/* Media Queries */
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    nav {
+        flex-direction: row;
+        padding: 10px;
+    }
+    nav div {
+        width: 80px; /* Decrease width */
+        height: 40px; /* Decrease height */
+        font-size: 0.9em; /* Increase font size */
+    }
+    nav p {
+        font-size: 2.2em; /* Increase font size */
+        margin-left: 0;
+    }
+    .nav-logo {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    nav {
+        padding: 15px;
+    }
+    nav div {
+        width: 100px; /* Decrease width */
+        height: 50px; /* Decrease height */
+        font-size: 1em; /* Increase font size */
+    }
+    nav p {
+        font-size: 2.7em; /* Increase font size */
+        margin-left: 10px;
+    }
+    .nav-logo {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    nav {
+        padding: 18px;
+    }
+    nav div {
+        width: 115px;
+        height: 58px;
+        font-size: 1em;
+    }
+    nav p {
+        font-size: 2.8em;
+        margin-left: 15px;
+    }
+    .nav-logo {
+        width: 65px;
+        height: 65px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    nav {
+        padding: 20px;
+    }
+    nav div {
+        width: 120px;
+        height: 60px;
+        font-size: 1.1em;
+    }
+    nav p {
+        font-size: 3em;
+        margin-left: 20px;
+    }
+    .nav-logo {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    nav {
+        padding: 20px;
+    }
+    nav div {
+        width: 120px;
+        height: 60px;
+        font-size: 1.2em;
+    }
+    nav p {
+        font-size: 3em;
+        margin-left: 20px;
+    }
+    .nav-logo {
+        width: 70px;
+        height: 70px;
+    }
+}

@@ -36,10 +36,15 @@ body {
     border: none;
     border-radius: 25px;
     color: white;
-    padding: 15px 30px;
-    font-size: 1.5em;
+    padding: 20px 40px; /* Increase padding */
+    font-size: 1.75em; /* Increase font size */
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+
+.buttons-container button.active {
+    background-color: rgb(47, 40, 51); /* Match the background color of the page */
+    color: white; /* Ensure the text color remains readable */  
 }
 
 .buttons-container button:hover {
@@ -187,7 +192,7 @@ main {
 
 .team-panel{
     display: inline-block;
-    width: 20%; /* Decrease width from 40% to 30% */
+    width: 60%; /* Decrease width from 40% to 30% */
     padding: 10px;
     margin: 10px;
     border: 2px solid #000;
@@ -293,4 +298,61 @@ main {
 
 .score-separator {
     color: black;
+}
+
+.no-matches {
+    text-align: center;
+    font-size: 2em;
+    color: white;
+}
+
+/* Media query for large devices (desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .buttons-container button {
+        padding: 20px 40px; /* Increase padding */
+        font-size: 1.75em; /* Increase font size */
+    }
+}
+
+/* Media query for medium devices (tablets, 768px to 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .buttons-container {
+        flex-direction: row;
+        gap: 1%;
+    }
+
+    .buttons-container button {
+        padding: 18px 36px; /* Adjust padding for tablets */
+        font-size: 1.5em; /* Adjust font size for tablets */
+    }
+}
+
+/* Media query for small devices (landscape phones, 576px to 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .buttons-container {
+        flex-direction: row; /* Change to row to align buttons in a line */
+        align-items: center;
+        gap: 10px;
+    }
+
+    .buttons-container button {
+        width: auto; /* Adjust width to auto */
+        padding: 16px 32px; /* Adjust padding for small devices */
+        font-size: 1.25em; /* Adjust font size for small devices */
+    }
+}
+
+/* Media query for extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575px) {
+    .buttons-container {
+        flex-direction: row; /* Change to row to align buttons in a line */
+        align-items: center;
+        gap: 8px;
+    }
+
+    .buttons-container button {
+        width: auto; /* Adjust width to auto */
+        padding: 14px 28px; /* Adjust padding for extra small devices */
+        font-size: 1.1em; /* Adjust font size for extra small devices */
+    }
 }

@@ -39,7 +39,7 @@ const Upcoming = () => {
                         onClick={() => setView('live')}
                         style={{ backgroundColor: view === 'live' ? 'white' : '' }}
                     >
-                        Live Now
+                        Live
                     </button>
                 </NavLink>
                 <NavLink to="/spardha/results">

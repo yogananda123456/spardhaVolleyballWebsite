@@ -1,0 +1,45 @@
+.buttons-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line if needed */
+}
+
+.buttons-container button {
+    background-color: transparent; /* Default background color */
+    padding: 2px 4px; /* Further decrease padding */
+    border: none;
+    cursor: pointer;
+    font-size: 10px; /* Further decrease font size */
+    white-space: nowrap; /* Prevent text from wrapping */
+    width: 25; /* Adjust width if necessary */
+     /* Adjust height if necessary */
+}
+
+.buttons-container .button-active {
+    background-color: white; /* Active button background color */
+}
+
+/* Media query for tablets */
+@media (max-width: 768px) {
+    .buttons-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .buttons-container button {
+        width: 80%;
+        margin-bottom: 10px;
+        font-size: 8px; /* Further decrease font size for tablets */
+        padding: 2px 4px; /* Further decrease padding for tablets */
+    }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+    .buttons-container button {
+        width: 100%;
+        font-size: 6px; /* Further decrease font size for mobile devices */
+        padding: 1px 2px; /* Further decrease padding for mobile devices */
+    }
+}

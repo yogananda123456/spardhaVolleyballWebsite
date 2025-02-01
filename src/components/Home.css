@@ -9,8 +9,9 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column; /* Stack image and text vertically */
-    height: 90vh; /* Adjust height to move content up */
-    margin-top: -180px; /* Move the content up */
+    height: 50vh; /* Adjust height to move content up */
+    margin-top: -180px; 
+    margin-bottom: -10px;/* Move the content up */
 }
 
 .image-container img {
@@ -31,5 +32,90 @@ body {
     margin: 10px 0; /* Decrease space between welcome lines */
 }
 
+/* Media Queries */
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .image-container {
+        height: 85vh;
+        margin-top: -160px;
+    }
+    .welcome-text {
+        font-size: 1.6em;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .image-container {
+        height: 80vh;
+        margin-top: -150px;
+    }
+    .welcome-text {
+        font-size: 1.8em;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .image-container {
+        height: 70vh;
+        margin-top: -120px;
+    }
+    .welcome-text {
+        font-size: 2em;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .image-container {
+        height: 60vh;
+        margin-top: -100px;
+    }
+    .welcome-text {
+        font-size: 2.2em;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .image-container {
+        height: 50vh;
+        margin-top: -80px;
+    }
+    .welcome-text {
+        font-size: 2.5em;
+    }
+}
+.instagram-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px; /* Adjust margin to move it a bit above */
+    padding: 10px;
+    background: linear-gradient(45deg, rgb(122, 44, 195), #470378f6); /* Linear gradient from white to purple */
+    border-radius: 10px; /* Add border radius */
+    width: fit-content;
+    margin: 0 auto; /* Center the container */
+  }
+  
+  .instagram-logo {
+    width: 30px; /* Decrease the width */
+    height: 30px; /* Decrease the height */
+  }
+  
+  .instagram-text {
+    margin-left: 10px; /* Add margin to separate text from logo */
+    font-size: 1em; /* Adjust font size as needed */
+    color: white; /* Adjust color as needed */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .instagram-container a {
+    text-decoration: none; /* Remove underline */
+    color: white; /* Change color to white */
+  }
 
 
