@@ -1,5 +1,16 @@
 
-.gallery {
+
+.c {
+    background: linear-gradient(45deg, #ff6b6b, #f06595);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    padding: 20px 40px; /* Increase padding */
+    font-size: 1.75em; /* Increase font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .hi {
     width: 90%;
     padding: 40px 20px 20px 20px; /* Increase padding on top */
     text-align: center;
@@ -8,4 +19,13 @@
     flex-direction: column; /* Align items in a column */
     justify-content: center; /* Center text vertically */
     align-items: center; /* Center text horizontally */
+}
+
+.gallery{
+    padding: 20px 20px 20px 20px; /* Add padding to left, right, and top */
+    display: flex; /* Center text vertically */
+    flex-direction: column; /* Align items in a column */
+    justify-content: center; /* Center text vertically */
+    align-items: center;
+    position: relative; /* Center text horizontally */
 }

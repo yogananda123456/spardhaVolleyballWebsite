@@ -1,11 +1,13 @@
-
-  
- 
-h1 {
-    color: #ffffff; /* Change font color */
-    font-size: 30px; /* Increase font size */
-    text-align: center; /* Center text */
-}
+.a {
+    background: linear-gradient(45deg, #ff6b6b, #f06595);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    padding: 20px 40px; /* Increase padding */
+    font-size: 1.75em; /* Increase font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
 
 .peoples {
     width: 90%;
@@ -23,5 +25,12 @@ h1 {
     display: flex; /* Center text vertically */
     flex-direction: column; /* Align items in a column */
     justify-content: center; /* Center text vertically */
-    align-items: center; /* Center text horizontally */
+    align-items: center;
+    position: relative; /* Center text horizontally */
+}
+
+
+.main {
+    position: relative;
+    margin-top: 30%; /* Increase margin-top to create a larger gap */
 }

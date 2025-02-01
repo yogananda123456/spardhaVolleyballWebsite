@@ -13,23 +13,24 @@ const Live = () => {
         fetch('http://localhost:5000/api/data')
             .then(response => response.json())
             .then(data => {
-                const initialMatches = data.map(match => ({
-                    ...match,
-                    teamAscore: 0,
-                    teamBscore: 0,
-                    teamAset: 0,
-                    teamBset: 0
-                }));
-                setMatches(initialMatches);
+
+                const sortedMatches = data.sort((a, b) => {
+                    const courtA = parseInt(a.court.replace(/\D/g, ''), 10);
+                    const courtB = parseInt(b.court.replace(/\D/g, ''), 10);
+                    return courtA - courtB;
+                });
+                setMatches(sortedMatches);
+                console.log(sortedMatches);
             })
             .catch(error => console.error('Error fetching team data:', error));
 
-        fetch('http://localhost:5000/api/sheet2data')
+
+        fetch('http://localhost:5000/api/court1data')
             .then(response => response.json())
             .then(data => setLivematches(data))
             .catch(error => console.error('Error fetching sheet2data:', error));
 
-        fetch('http://localhost:5000/api/sheet3data')
+        fetch('http://localhost:5000/api/court2data')
             .then(response => response.json())
             .then(data => {
                 console.log('Sheet 3 data:', data); // Log the data to check if it's being fetched
@@ -42,7 +43,10 @@ const Live = () => {
         fetchData();
         const interval = setInterval(fetchData, 5000); // Refresh every 5 seconds
         return () => clearInterval(interval); // Cleanup interval on component unmount
+    
     }, []);
+    
+
 
     return (
         <div>
@@ -95,13 +99,23 @@ const Live = () => {
                                     <div className="versus">Vs</div>
                                     <div className="team-panel" id="team-b">{matches[0].teamB}</div>
                                 </div>
-                                <div className="scores-container">
-                                    <div className="set-score" id="set-score-a">{livematch.match1Asets}</div>
-                                    <div className="score" id="score-a">{livematch.match1Ascore}</div>
-                                    <div className="score-separator">:</div>
-                                    <div className="score" id="score-b">{livematch.match1Bscore}</div>
-                                    <div className="set-score" id="set-score-b">{livematch.match1Bsets}</div>
-                                </div>
+                                {matches[0].court === 'Court 1' ? (
+                                    <div className="scores-container">
+                                        <div className="set-score" id="set-score-a">{livematch.match1Asets}</div>
+                                        <div className="score" id="score-a">{livematch.match1Ascore}</div>
+                                        <div className="score-separator">:</div>
+                                        <div className="score" id="score-b">{livematch.match1Bscore}</div>
+                                        <div className="set-score" id="set-score-b">{livematch.match1Bsets}</div>
+                                    </div>
+                                ) : matches[0].court === 'Court 2' ? (
+                                    <div className="scores-container">
+                                        <div className="set-score" id="set-score-a">{livematches2[0].match2Asets}</div>
+                                        <div className="score" id="score-a">{livematches2[0].match2Ascore}</div>
+                                        <div className="score-separator">:</div>
+                                        <div className="score" id="score-b">{livematches2[0].match2Bscore}</div>
+                                        <div className="set-score" id="set-score-b">{livematches2[0].match2Bsets}</div>
+                                    </div>
+                                ) : null}
                             </div>
                         ) :  matches.length === 2 ? (
                             <div className="main-panel">

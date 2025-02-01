@@ -11,16 +11,16 @@ function Gallery() {
         </header>
        
         <div className="gallery">
-           <h1> Inter-IIT 2024 </h1>
-           coming soon 
+           <div class='c'> Inter-IIT 2024 </div>
+           <div className='hi'>coming soon </div>
             </div>
         <div className="gallery">
-           <h1>Farewell 2024</h1>
-           Coming soon 
+           <div class='c'>Farewell 2024</div>
+           <div className='hi'>coming soon </div>
         </div>
         <div className="gallery">
-            <h1>Spardha 25</h1>
-            Coming soon
+            <div class='c'>Spardha 25</div>
+            <div className='hi'>coming soon </div>
         </div>
         
     </div>
