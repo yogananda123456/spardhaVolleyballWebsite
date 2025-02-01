@@ -10,8 +10,8 @@ body {
     align-items: center;
     flex-direction: column; /* Stack image and text vertically */
     height: 50vh; /* Adjust height to move content up */
-    margin-top: -180px; 
-    margin-bottom: -10px;/* Move the content up */
+    margin-top: -200px; /* Move the content up */
+    margin-bottom: -10px; /* Move the content up */
 }
 
 .image-container img {
