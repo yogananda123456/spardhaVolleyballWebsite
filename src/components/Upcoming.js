@@ -10,7 +10,7 @@ const Upcoming = () => {
     const [view, setView] = useState('upcoming');
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/upcoming')
+        fetch('https://back-end-volleyball.vercel.app/api/upcoming')
             .then(response => response.json())
             .then(data => setUpcomingMatches(data))
             .catch(error => console.error('Error fetching upcoming matches:', error));

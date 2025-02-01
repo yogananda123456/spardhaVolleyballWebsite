@@ -5,7 +5,7 @@ import './Gallery.css';
 
 function Gallery() {
   return (
-    <div>
+    <div class ='main1'>
         <header>
             <NavBar />
         </header>

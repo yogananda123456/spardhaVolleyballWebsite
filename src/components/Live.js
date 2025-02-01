@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faVolleyball } from '@fortawesome/free-solid-svg-icons';
 import './Live.css';
 import NavBar from './NavBar';
 
@@ -8,12 +10,16 @@ const Live = () => {
     const [livematches, setLivematches] = useState([]);
     const [livematches2, setLivematches2] = useState([]);
     const [view, setView] = useState('live');
+    const [servingTeam1, setServingTeam1] = useState(null);
+    const [servingTeam2, setServingTeam2] = useState(null);
+
+    const prevLivematches = useRef([]);
+    const prevLivematches2 = useRef([]);
 
     const fetchData = () => {
-        fetch('http://localhost:5000/api/data')
+        fetch('https://back-end-volleyball.vercel.app/api/data')
             .then(response => response.json())
             .then(data => {
-
                 const sortedMatches = data.sort((a, b) => {
                     const courtA = parseInt(a.court.replace(/\D/g, ''), 10);
                     const courtB = parseInt(b.court.replace(/\D/g, ''), 10);
@@ -24,13 +30,14 @@ const Live = () => {
             })
             .catch(error => console.error('Error fetching team data:', error));
 
-
-        fetch('http://localhost:5000/api/court1data')
+        fetch('https://back-end-volleyball.vercel.app/api/court1data')
             .then(response => response.json())
-            .then(data => setLivematches(data))
+            .then(data => {
+                setLivematches(data);
+            })
             .catch(error => console.error('Error fetching sheet2data:', error));
 
-        fetch('http://localhost:5000/api/court2data')
+        fetch('https://back-end-volleyball.vercel.app/api/court2data')
             .then(response => response.json())
             .then(data => {
                 console.log('Sheet 3 data:', data); // Log the data to check if it's being fetched
@@ -43,10 +50,29 @@ const Live = () => {
         fetchData();
         const interval = setInterval(fetchData, 5000); // Refresh every 5 seconds
         return () => clearInterval(interval); // Cleanup interval on component unmount
-    
     }, []);
-    
 
+    useEffect(() => {
+        if (prevLivematches.current.length > 0) {
+            if (livematches[0]?.match1Ascore !== prevLivematches.current[0]?.match1Ascore) {
+                setServingTeam1('teamA');
+            } else if (livematches[0]?.match1Bscore !== prevLivematches.current[0]?.match1Bscore) {
+                setServingTeam1('teamB');
+            }
+        }
+        prevLivematches.current = livematches;
+    }, [livematches]);
+
+    useEffect(() => {
+        if (prevLivematches2.current.length > 0) {
+            if (livematches2[0]?.match2Ascore !== prevLivematches2.current[0]?.match2Ascore) {
+                setServingTeam2('teamA');
+            } else if (livematches2[0]?.match2Bscore !== prevLivematches2.current[0]?.match2Bscore) {
+                setServingTeam2('teamB');
+            }
+        }
+        prevLivematches2.current = livematches2;
+    }, [livematches2]);
 
     return (
         <div>
@@ -86,8 +112,8 @@ const Live = () => {
                 </NavLink>
             </div>
             <main>
-                {view === 'live' && livematches.map((livematch,index)=>( 
-                    <React.Fragment key={index}>  
+                {view === 'live' && livematches.map((livematch, index) => (
+                    <React.Fragment key={index}>
                         {matches.length === 0 ? (
                             <div className="no-matches">No Live Matches</div>
                         ) : matches.length === 1 ? (
@@ -95,9 +121,15 @@ const Live = () => {
                                 <h2 className="panel-heading"><span id="match-type1">{matches[0].matchType}</span></h2>
                                 <div className="Gender">{matches[0].gender}</div>
                                 <div className="team-container">
-                                    <div className="team-panel" id="team-a">{matches[0].teamA}</div>
+                                    <div className="team-panel" id="team-a">
+                                        {matches[0].teamA}
+                                        {servingTeam1 === 'teamA' && <FontAwesomeIcon icon={faVolleyball} style={{ marginLeft: '10px' }} />}
+                                    </div>
                                     <div className="versus">Vs</div>
-                                    <div className="team-panel" id="team-b">{matches[0].teamB}</div>
+                                    <div className="team-panel" id="team-b">
+                                        {servingTeam1 === 'teamB' && <FontAwesomeIcon icon={faVolleyball} style={{ marginRight: '10px' }} />}
+                                        {matches[0].teamB}
+                                    </div>
                                 </div>
                                 {matches[0].court === 'Court 1' ? (
                                     <div className="scores-container">
@@ -117,14 +149,20 @@ const Live = () => {
                                     </div>
                                 ) : null}
                             </div>
-                        ) :  matches.length === 2 ? (
+                        ) : matches.length === 2 ? (
                             <div className="main-panel">
                                 <h2 className="panel-heading"><span id="match-type1">{matches[0].matchType}</span></h2>
                                 <div className="Gender">{matches[0].gender}</div>
                                 <div className="team-container">
-                                    <div className="team-panel" id="team-a">{matches[0].teamA}</div>
+                                    <div className="team-panel" id="team-a">
+                                        {matches[0].teamA}
+                                        {servingTeam1 === 'teamA' && <FontAwesomeIcon icon={faVolleyball} style={{ marginLeft: '10px' }} />}
+                                    </div>
                                     <div className="versus">Vs</div>
-                                    <div className="team-panel" id="team-b">{matches[0].teamB}</div>
+                                    <div className="team-panel" id="team-b">
+                                        {servingTeam1 === 'teamB' && <FontAwesomeIcon icon={faVolleyball} style={{ marginRight: '10px' }} />}
+                                        {matches[0].teamB}
+                                    </div>
                                 </div>
                                 <div className="scores-container">
                                     <div className="set-score" id="set-score-a">{livematch.match1Asets}</div>
@@ -134,20 +172,25 @@ const Live = () => {
                                     <div className="set-score" id="set-score-b">{livematch.match1Bsets}</div>
                                 </div>
                             </div>
-                        )  : null }
-                            
+                        ) : null}
                     </React.Fragment>
                 ))}
-                {view === 'live' && livematches2.map((livematch2,index)=>( 
-                    <React.Fragment key={index}>  
+                {view === 'live' && livematches2.map((livematch2, index) => (
+                    <React.Fragment key={index}>
                         {matches.length === 2 ? (
                             <div className="main-panel">
                                 <h2 className="panel-heading"><span id="match-type1">{matches[1].matchType}</span></h2>
                                 <div className="Gender">{matches[1].gender}</div>
                                 <div className="team-container">
-                                    <div className="team-panel" id="team-a">{matches[1].teamA}</div>
+                                    <div className="team-panel" id="team-a">
+                                        {matches[1].teamA}
+                                        {servingTeam2 === 'teamA' && <FontAwesomeIcon icon={faVolleyball} style={{ marginLeft: '10px' }} />}
+                                    </div>
                                     <div className="versus">Vs</div>
-                                    <div className="team-panel" id="team-b">{matches[1].teamB}</div>
+                                    <div className="team-panel" id="team-b">
+                                        {servingTeam2 === 'teamB' && <FontAwesomeIcon icon={faVolleyball} style={{ marginRight: '10px' }} />}
+                                        {matches[1].teamB}
+                                    </div>
                                 </div>
                                 <div className="scores-container">
                                     <div className="set-score" id="set-score-a">{livematch2.match2Asets}</div>
@@ -157,9 +200,7 @@ const Live = () => {
                                     <div className="set-score" id="set-score-b">{livematch2.match2Bsets}</div>
                                 </div>
                             </div>
-                            
-                        ) : null }
-                            
+                        ) : null}
                     </React.Fragment>
                 ))}
             </main>

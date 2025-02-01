@@ -18,7 +18,7 @@ const Results = () => {
     const [view, setView] = useState('results');
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/results')
+        fetch('https://back-end-volleyball.vercel.app/api/results')
             .then(response => response.json())
             .then(data => setResults(data))
             .catch(error => console.error('Error fetching results:', error));

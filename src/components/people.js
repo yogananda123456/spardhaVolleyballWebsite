@@ -4,7 +4,7 @@ import './people.css';
 
 function People() {
     return (
-      <div>
+      <div class ='main'>
         <header>
           <NavBar />
         </header>

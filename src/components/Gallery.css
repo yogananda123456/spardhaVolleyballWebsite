@@ -29,3 +29,7 @@
     align-items: center;
     position: relative; /* Center text horizontally */
 }
+.main1 {
+    position: relative;
+    margin-top: 10%; /* Increase margin-top to create a larger gap */
+}
